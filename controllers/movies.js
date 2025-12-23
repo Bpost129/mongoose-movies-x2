@@ -21,8 +21,23 @@ function create(req, res) {
   })
 }
 
+function index(req, res) {
+  Movie.find({})
+  .then(movies => {
+    res.render('movies/index', {
+      title: 'All Movies',
+      movies: movies
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   newMovie as new,
   create,
+  index,
 
 }
