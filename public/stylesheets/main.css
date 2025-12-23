@@ -49,10 +49,15 @@ body > nav {
   padding: 0 20px 0 30px;
 }
 
-nav > i {
+nav > a:first-child {
   width: 34px;
   object-fit: contain;
   margin-right: auto;
+}
+
+nav > a:first-child:hover {
+  color: #424748;
+  background-color: #b8c0c2;
 }
 
 nav > a {
