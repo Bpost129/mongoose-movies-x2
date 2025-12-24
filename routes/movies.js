@@ -7,6 +7,7 @@ const router = Router()
 router.get('/', moviesCtrl.index)
 router.get('/new', moviesCtrl.new)
 router.get('/:movieId', moviesCtrl.show)
+router.get('/:movieId/edit', moviesCtrl.edit)
 router.post('/', moviesCtrl.create)
 router.delete('/:movieId', moviesCtrl.delete)
 

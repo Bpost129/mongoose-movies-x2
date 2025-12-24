@@ -63,11 +63,26 @@ function deleteMovie(req, res) {
   })
 }
 
+function edit(req, res) {
+  Movie.findById(req.params.movieId)
+  .then(movie => {
+    res.render('movies/edit', {
+      title: 'Edit Movie',
+      movie: movie
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/movies')
+  })
+}
+
 export {
   newMovie as new,
   create,
   index,
   show,
   deleteMovie as delete,
-
+  edit,
+  
 }
