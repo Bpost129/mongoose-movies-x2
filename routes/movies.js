@@ -8,5 +8,6 @@ router.get('/', moviesCtrl.index)
 router.get('/new', moviesCtrl.new)
 router.get('/:movieId', moviesCtrl.show)
 router.post('/', moviesCtrl.create)
+router.delete('/:movieId', moviesCtrl.delete)
 
 export { router }

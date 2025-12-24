@@ -52,10 +52,22 @@ function show(req, res) {
   })
 }
 
+function deleteMovie(req, res) {
+  Movie.findByIdAndDelete(req.params.movieId)
+  .then(movie => {
+    res.redirect('/movies')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/movies')
+  })
+}
+
 export {
   newMovie as new,
   create,
   index,
   show,
+  deleteMovie as delete,
 
 }
