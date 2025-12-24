@@ -19,9 +19,8 @@
         <tr>
           <td><%= movie.title %></td>
           <td><%= movie.releaseYear %></td>
-          <td><%= movie.mpaaRating %></td>
-          <td><%= movie.cast.join(', ') %></td>
-          <td><%= movie.nowShowing ? 'Yes' : 'No' %></td>
+          <td><a href="/movies/<%= movie._id %>">DETAILS</a></td>
+          
         </tr>
       <% }) %>
     </tbody>
