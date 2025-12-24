@@ -9,9 +9,8 @@
       <tr>
         <th>Title</th>
         <th>Release Year</th>
-        <th>Rating</th>
-        <th>Cast</th>
-        <th>Now Showing</th>
+        <th>Details</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -20,7 +19,7 @@
           <td><%= movie.title %></td>
           <td><%= movie.releaseYear %></td>
           <td><a href="/movies/<%= movie._id %>">DETAILS</a></td>
-          
+
         </tr>
       <% }) %>
     </tbody>

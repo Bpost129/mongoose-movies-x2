@@ -38,9 +38,24 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  Movie.findById(req.params.movieId)
+  .then(movie => {
+    res.render('movies/show', {
+      title: 'Movie Details',
+      movie: movie
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   newMovie as new,
   create,
   index,
+  show,
 
 }
