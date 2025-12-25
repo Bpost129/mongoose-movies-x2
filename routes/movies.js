@@ -10,5 +10,6 @@ router.get('/:movieId', moviesCtrl.show)
 router.get('/:movieId/edit', moviesCtrl.edit)
 router.post('/', moviesCtrl.create)
 router.delete('/:movieId', moviesCtrl.delete)
+router.put('/:movieId', moviesCtrl.update)
 
 export { router }
