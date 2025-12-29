@@ -9,6 +9,7 @@ router.get('/new', moviesCtrl.new)
 router.get('/:movieId', moviesCtrl.show)
 router.get('/:movieId/edit', moviesCtrl.edit)
 router.post('/', moviesCtrl.create)
+router.post('/:movieId/reviews', moviesCtrl.createReview)
 router.delete('/:movieId', moviesCtrl.delete)
 router.put('/:movieId', moviesCtrl.update)
 
