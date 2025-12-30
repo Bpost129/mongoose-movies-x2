@@ -1,4 +1,5 @@
 import { Movie } from '../models/movie.js'
+import { Performer } from '../models/performer.js'
 
 function newMovie(req, res) {
   res.render('movies/new', {
@@ -37,10 +38,15 @@ function index(req, res) {
 
 function show(req, res) {
   Movie.findById(req.params.movieId)
+  .populate('cast')
   .then(movie => {
-    res.render('movies/show', {
-      title: 'Movie Details',
-      movie: movie
+    Performer.find({_id: {$nin: movie.cast}})
+    .then(performers => {
+      res.render('movies/show', {
+        title: 'Movie Details',
+        movie: movie,
+        performers: performers,
+      })
     })
   })
   .catch(err => {
