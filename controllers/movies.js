@@ -8,9 +8,6 @@ function newMovie(req, res) {
 
 function create(req, res) {
   req.body.nowShowing = !!req.body.nowShowing
-  if (req.body.cast) {
-    req.body.cast = req.body.cast.split(', ')
-  }
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
@@ -79,9 +76,6 @@ function edit(req, res) {
 
 function update(req, res) {
   req.body.nowShowing = !!req.body.nowShowing
-  if (req.body.cast) {
-    req.body.cast = req.body.cast.split(', ')
-  }
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
