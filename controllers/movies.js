@@ -13,7 +13,7 @@ function create(req, res) {
   }
   Movie.create(req.body)
   .then(movie => {
-    res.redirect('/movies')
+    res.redirect(`/movies/${movie._id}`)
   })
   .catch(err => {
     console.log(err)
