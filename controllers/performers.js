@@ -15,6 +15,8 @@ function newPerformer(req, res) {
 }
 
 function create(req, res) {
+  const birthDate = new Date(req.body.born)
+  req.body.born = birthDate.toUTCString()
   Performer.create(req.body)
   .then(performer => {
     res.redirect('/performers/new')
