@@ -23,6 +23,7 @@
     <ul>
       <% movie.cast.forEach(castMember => { %>
         <li><%= castMember.name %></li>
+        <small><%= castMember.born.toLocaleDateString() %></small>
       <% }) %>
     </ul>
     <%# end cast list %>
